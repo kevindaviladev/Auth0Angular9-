@@ -1,1 +1,3 @@
-<p>private works!</p>
+<pre *ngIf="auth.user$ | async as user">
+  <code>{{ user | json}}</code>
+</pre>

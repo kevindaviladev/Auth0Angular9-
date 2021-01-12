@@ -21,7 +21,10 @@ import { PrivateComponent } from './components/private/private.component';
     // Auth0
     AuthModule.forRoot({
       domain: 'dev-7cd0ipsj.us.auth0.com',
-      clientId: 'Gomh0Q3F2ZfK5RNAIYDgyEvnc9TJqak7'
+      clientId: 'Gomh0Q3F2ZfK5RNAIYDgyEvnc9TJqak7',
+      // Opcionales
+      cacheLocation: 'localstorage',
+      useRefreshTokens: true
     })
   ],
   providers: [],

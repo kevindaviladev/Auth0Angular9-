@@ -9,13 +9,25 @@
         <li class="nav-item" routerLinkActive="active">
           <a class="nav-link" routerLink="public">Public</a>
         </li>
-        <li class="nav-item" routerLinkActive="active">
+        <li class="nav-item" routerLinkActive="active" *ngIf="auth.isAuthenticated$ | async"  >
           <a class="nav-link" routerLink="private">Private</a>
         </li>
       </ul>
     </div>
   </div>
+  <button 
+    class="btn btn-primary" 
+    (click)="loginWithRedirect()"
+    *ngIf="!(auth.isAuthenticated$ | async)">Ingresar</button>
+  <button 
+    class="btn btn-danger ml-5" 
+    (click)="logout()"
+    *ngIf="auth.isAuthenticated$ | async" >Salir</button>
 </nav>
+
+
+
+
 
 <div class="container mt-5">
   <router-outlet></router-outlet>
